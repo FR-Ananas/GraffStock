@@ -602,7 +602,7 @@ header{position:sticky;top:0;z-index:40;backdrop-filter:saturate(160%) blur(8px)
   });
   els.btnShareShop.addEventListener("click", async ()=>{
     const needs = computeNeeds();
-    const text = needs.map(it=> `- ${it.category}: ${it.brand} ${it.color||it.capType||""} × ${it.toBuy} ${it.unit||"pcs"`).join("\n");
+    {const text = needs.map(it=> `- ${it.category}: ${it.brand} ${it.color||it.capType||""} × ${it.toBuy} ${it.unit||"pcs"`).join("\n");
     if(navigator.share){ try{ await navigator.share({ text, title:"Achats" }); }catch(e){} }
     else { navigator.clipboard.writeText(text); }
   });
